@@ -13,7 +13,7 @@
     <form method="POST">
       <!---- originally used pattern=".{8,64} attribute but moved this functionality to JS to give user better feedback-->
       <input id="password-input" placeholder="PASSWORD" name="password" autocomplete="off" required>
-      <input id="submit" type="button" value="REVIEW PASSWORD" onclick="lengthVerification()">
+      <input id="submit" type="button" value="REVIEW PASSWORD" onclick="stringVerification()">
     </form>
 
     <div id="validation-text"></div>
