@@ -13,7 +13,6 @@ const lengthVerification = () => {
 
 const passwordVerification = () => {
     let passwordVal = document.querySelector('input[name="password"]').value;
-    //bst.search(passwordVal
     (!passwordsArr.includes(passwordVal)) ? asciiVerification(passwordVal) : rejectApprove(passwordVal, 'Fails NIST requirements because it is a very common password. Please submit a new password.');
 };
 
