@@ -1,67 +1,9 @@
-class Node {
-    constructor(key, left = null, right = null) {
-        this.key = key;
-        this.left = null;
-        this.right = null;
-    }
-};
-
-class BinarySearchTree {
-    constructor() {
-        this.root = null;
-    }
-
-    insert(key) {
-        const node = new Node(key);
-        if (this.root === null) {
-            this.root = node;
-        } else {
-            let current = this.root;
-            let parent;
-            while (true) {
-                parent = current;
-                if (key < current.key) {
-                    current = current.left;
-                    if (current === null) {
-                        parent.left = node;
-                        break;
-                    }
-                } else {
-                    current = current.right;
-                    if (current === null) {
-                        parent.right = node;
-                        break;
-                    }
-                }
-            }
-        }
-    }
-
-    search(key) {
-        let cur = this.root;
-        while (cur.key !== key) {
-            if (key < cur.key) {
-                cur = cur.left;
-            } else {
-                cur = cur.right;
-            }
-
-            if (cur === null) {
-                return null
-            }
-        }
-        return cur;
-    }
-};
-
-const bst = new BinarySearchTree();
+let passwordsArr;
 
 const requestCommonPasswords = async function fetchPws() {
     const response = await fetch("http://localhost:3000/passwords");
-    const passwords = await response.text();
-    passwords.split("\n").forEach((cur) => {
-        bst.insert(cur);
-    });
+    const passwords = await response.text()
+    passwordsArr = passwords.split('\n');
 };
 
 const lengthVerification = () => {
@@ -71,7 +13,8 @@ const lengthVerification = () => {
 
 const passwordVerification = () => {
     let passwordVal = document.querySelector('input[name="password"]').value;
-    (!bst.search(passwordVal)) ? asciiVerification(passwordVal) : rejectApprove(passwordVal, 'Fails NIST requirements because it is a very common password. Please submit a new password.');
+    //bst.search(passwordVal
+    (!passwordsArr.includes(passwordVal)) ? asciiVerification(passwordVal) : rejectApprove(passwordVal, 'Fails NIST requirements because it is a very common password. Please submit a new password.');
 };
 
 const asciiVerification = password => {
