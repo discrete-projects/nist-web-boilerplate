@@ -18,7 +18,7 @@ const passwordVerification = (passwordVal) => {
     (!passwordsArr.includes(passwordVal)) ? asciiVerification(passwordVal) : rejectApprove(passwordVal, 'Fails NIST requirements because it is a very common password. Please submit a new password.');
 };
 
-const asciiVerification = password => {
+const asciiVerification = (password) => {
     (!(!/^[\x00-\x7F]*$/.test(password))) ? rejectApprove(password, 'Passes all NIST requirements and is a valid password.') : rejectApprove(password, ' Fails NIST requirements because it is not valid ASCII. Please submit a new password.');
 };
 
