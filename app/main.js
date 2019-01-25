@@ -4,7 +4,7 @@ class Node {
         this.left = null;
         this.right = null;
     }
-}
+};
 
 class BinarySearchTree {
     constructor() {
@@ -61,27 +61,27 @@ const requestCommonPasswords = async function fetchPws() {
     const passwords = await response.text();
     passwords.split("\n").forEach((cur) => {
         bst.insert(cur);
-    })
+    });
 };
 
 const lengthVerification = () => {
     let passwordVal = document.querySelector('input[name="password"]').value;
     (passwordVal.length >= 8 && passwordVal.length <= 64) ? passwordVerification(passwordVal) : rejectApprove(passwordVal, 'Fails NIST requirements because it is not the correct length. Please submit a new password.');
-}
+};
 
 const passwordVerification = () => {
     let passwordVal = document.querySelector('input[name="password"]').value;
     (!bst.search(passwordVal)) ? asciiVerification(passwordVal) : rejectApprove(passwordVal, 'Fails NIST requirements because it is a very common password. Please submit a new password.');
-}
+};
 
 const asciiVerification = password => {
     (!(!/^[\x00-\x7F]*$/.test(password))) ? rejectApprove(password, 'Passes all NIST requirements and is a valid password.') : rejectApprove(password, ' Fails NIST requirements because it is not valid ASCII. Please submit a new password.');
-}
+};
 
 const rejectApprove = (passwordString, validationMsg) => {
     let validationText = document.querySelector('#validation-text');
     validationText.innerHTML = `<span class="validation-password">` + passwordString + `</span>` + " " + validationMsg;
-}
+};
 
 requestCommonPasswords();
 
