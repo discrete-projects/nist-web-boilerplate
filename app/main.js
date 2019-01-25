@@ -66,7 +66,7 @@ const requestCommonPasswords = async function fetchPws() {
 
 const lengthVerification = () => {
     let passwordVal = document.querySelector('input[name="password"]').value;
-    (passwordVal.length > 8 && passwordVal.length <= 64) ? passwordVerification(passwordVal) : rejectApprove(passwordVal, 'Fails NIST requirements because it is not the correct length. Please submit a new password.');
+    (passwordVal.length >= 8 && passwordVal.length <= 64) ? passwordVerification(passwordVal) : rejectApprove(passwordVal, 'Fails NIST requirements because it is not the correct length. Please submit a new password.');
 }
 
 const passwordVerification = () => {
