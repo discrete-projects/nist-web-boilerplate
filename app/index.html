@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>pwned</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script>
+      (()=> {
+        async function fetchPws() {
+          const response = await fetch("http://localhost:3000/passwords");
+          const passwords = await response.text();
+          // TODO: parse and store passwords.
+        };
+        fetchPws();
+      })();
+    </script> -->
+  </head>
+  <body>
+    <header>
+      <h1>NIST PASSWORD VALIDATOR</h1>
+    </header>
+
+    <form method="POST">
+      <!---- originally used pattern=".{8,64} attribute but move this condition to JS to give user consistent feedback-->
+      <input id="password-input" placeholder="PASSWORD" name="password" autocomplete="off" required>
+      <input id="submit" type="button" value="REVIEW PASSWORD" onclick="lengthVerification()">
+    </form>
+
+    <div id="validation-text"></div>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
+

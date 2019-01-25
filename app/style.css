@@ -1,0 +1,108 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+
+
+input::placeholder {
+  color: #4586DA;
+  font-size: 0.875em;
+}
+
+input:focus::placeholder {
+  color: #4586DA;
+}
+
+input:hover::placeholder {
+  color: #FFFFFF;
+  font-size: 0.875em;
+}
+
+input:hover:focus::placeholder{
+  color: #4586DA;
+}
+
+input:hover::placeholder {
+  color: #FFFFFF;
+  font-size: 0.875em;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: #FFFFFF;
+  color: #4586DA;
+}
+
+header {
+  position: relative;
+  margin: 100px 0 25px 0;
+  text-align: center;
+  letter-spacing: 7px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+form {
+  position: relative;
+  width: 500px;
+  margin: 50px auto 100px auto;
+}
+
+#validation-text {
+  position: relative;
+  width: 500px;
+  margin: 50px auto 100px auto;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.validation-password {
+  background:#FAC508;
+  display: block;
+  margin: 0 0 10px;
+  padding: 5px;
+}
+
+input {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  width: 470px;
+  height: 50px;
+  padding: 0px 15px 0px 15px;
+  
+  background: transparent;
+  outline: none;
+  color: #4586DA;
+  
+  border: solid 1px #4586DA;
+  
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+
+input:hover {
+  background: #4586DA;
+  color: #FFFFFF;
+}
+
+#submit {
+  width: 502px;
+  
+  padding: 0;
+  margin: 25px 0px 0px 0px;
+  
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  color: #4586DA;
+  
+  outline:none;
+  cursor: pointer;
+  
+  border: solid 1px #4586DA;
+  display: block;
+}
+
+#submit:hover {
+  color: #FFFFFF;
+}
