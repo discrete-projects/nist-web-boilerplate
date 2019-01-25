@@ -11,12 +11,10 @@ const stringVerification = () => {
     (!(/\s/g.test(passwordVal))) ? lengthVerification(passwordVal) : rejectApprove(passwordVal, 'Fails NIST requirements because it contains a space. Please submit a new password.');      
 }
 const lengthVerification = (passwordVal) => {
-    // let passwordVal = document.querySelector('input[name="password"]').value;
     (passwordVal.length >= 8 && passwordVal.length <= 64) ? passwordVerification(passwordVal) : rejectApprove(passwordVal, 'Fails NIST requirements because it is not the correct length. Please submit a new password.');
 };
 
 const passwordVerification = (passwordVal) => {
-    // let passwordVal = document.querySelector('input[name="password"]').value;
     (!passwordsArr.includes(passwordVal)) ? asciiVerification(passwordVal) : rejectApprove(passwordVal, 'Fails NIST requirements because it is a very common password. Please submit a new password.');
 };
 
