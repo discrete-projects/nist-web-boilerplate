@@ -39,7 +39,7 @@ class BinarySearchTree {
 
     search(key) {
         let cur = this.root;
-        while (cur.key !== key ) {
+        while (cur.key !== key) {
             if (key < cur.key) {
                 cur = cur.left;
             } else {
